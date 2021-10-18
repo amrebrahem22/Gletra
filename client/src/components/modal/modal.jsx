@@ -1,8 +1,8 @@
 import React, {useState, useEffect, useRef} from 'react'
 import PropTypes from 'prop-types';
-import './moadl.scss';
+import './modal.scss';
 
-const modal = (props) => {
+const Modal = (props) => {
     const [active, setactive] = useState(false);
 
     useEffect(() => {
@@ -43,4 +43,4 @@ ModalContent.propTypes = {
     onClose: PropTypes.func
 }
 
-export default modal
+export default Modal
