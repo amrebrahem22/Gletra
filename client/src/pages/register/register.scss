@@ -1,0 +1,75 @@
+@use '../../scss' as *;
+
+.register {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../../assets/footer-bg.jpg');
+    background-position: center;
+    background-size: cover;
+
+    @include flex(center, center);
+    flex-direction: column;
+
+    .logo-container {
+        margin-bottom: 3rem;
+        @include flex(center, center);
+
+        .logo {
+            margin-right: 2rem;
+        }
+
+        img {
+            width: 80px
+        }
+    }
+
+    .content {
+        text-align: center;
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            margin: .5rem 0;
+        }
+
+        p {
+            color: #9e9fa3;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            input {
+                background: #fff;
+                flex: 1;
+                max-width: 70%;
+                padding: 1rem;
+                border-radius: 0 0 0 5px;
+            }
+
+            button {
+                padding: 1rem;
+                border: none;
+                border-radius: 0 5px 5px 0;
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 1rem;
+                background: #f00;
+                color: #fff;
+                transition: all .5s ease;
+
+                &:hover {
+                    background: #bf2323;
+                    color: #e5dfdf
+                }
+            }
+        }
+    }
+}
