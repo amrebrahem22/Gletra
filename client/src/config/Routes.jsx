@@ -4,12 +4,14 @@ import Catalog from '../pages/Catalog';
 import Detail from '../pages/detail/Detail';
 import Home from '../pages/Home';
 import Register from '../pages/register/Register';
+import Login from '../pages/login/Login';
 
 
 const Routes = () => {
     return (
         <Switch>
             <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
             <Route 
                 path='/:category/search/:keyword'
                 component={Catalog}
