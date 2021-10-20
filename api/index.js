@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 
+const authRouter = require('./routes/auth');
+
 dotenv.config();
 
 const app = express();
@@ -17,6 +19,9 @@ mongoose
 
 app.use(express.json());
 app.use(morgan("tiny"));
+
+// Routes
+app.use('/api/auth', authRouter);
 
 const port = process.env.PORT || 5000;
 
