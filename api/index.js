@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 const authRouter = require('./routes/auth');
 const userRouter = require('./routes/user');
 const moviesRouter = require('./routes/movies');
+const listsRouter = require('./routes/lists');
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.use(morgan("tiny"));
 app.use('/api/auth', authRouter);
 app.use('/api/users', userRouter);
 app.use('/api/movies', moviesRouter);
+app.use('/api/lists', listsRouter);
 
 const port = process.env.PORT || 5000;
 
