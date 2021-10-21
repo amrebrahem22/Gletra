@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 
 const authRouter = require('./routes/auth');
+const userRouter = require('./routes/user');
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.use(morgan("tiny"));
 
 // Routes
 app.use('/api/auth', authRouter);
+app.use('/api/users', userRouter);
 
 const port = process.env.PORT || 5000;
 
