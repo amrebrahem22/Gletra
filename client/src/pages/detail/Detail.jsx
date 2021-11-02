@@ -9,6 +9,7 @@ import CastList from './CastList';
 import VideoList from './VideoList';
 
 import MovieList from '../../components/movie-list/MovieList';
+import axios from 'axios'
 
 const Detail = () => {
 
@@ -21,6 +22,10 @@ const Detail = () => {
             const response = await tmdbApi.detail(category, id, {params:{}});
             setItem(response);
             window.scrollTo(0,0);
+            const d = {...response, backdrop_path: apiConfig.originalImage(response.backdrop_path), poster_path: apiConfig.originalImage(response.poster_path)}
+            await axios.post('http://localhost:5000/api/movies', d, {headers: { token: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNzAzNjFhNmZiOGIzMGQzODdiMjczZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNDkzNDQ4NCwiZXhwIjoxNjM1MzY2NDg0fQ.ZBptCFFPd4ZNpisf_RhAOZdip-rrdrLQXoiQ0h6WvH4' }})
+            .then(res => console.log('SUCCESS: ', res))
+            .catch(err => console.log(err))
         }
         getDetail();
     }, [category, id]);
